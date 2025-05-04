@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Empresas Vivas, Planeta Vivo: Una Revolución desde la Administración</title>
+  <style>
+    :root {
+      --primary: #1f2937;
+      --secondary: #f3f4f6;
+      --accent: #3b82f6;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--secondary);
+      margin: 0;
+      padding: 0;
+      color: var(--primary);
+    }
+
+    h1 {
+      text-align: center;
+      padding: 30px 20px 10px;
+      font-size: 2.5rem;
+      color: var(--primary);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .image-container {
+      background-color: #fff;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .image-container:hover {
+      transform: translateY(-5px);
+    }
+
+    .image-container img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .image-container h3 {
+      text-align: center;
+      margin: 12px;
+      font-size: 1.1rem;
+      color: var(--accent);
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.7);
+    }
+
+    .modal-content {
+      background-color: white;
+      margin: 10% auto;
+      padding: 30px;
+      border-radius: 16px;
+      width: 80%;
+      max-width: 600px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .modal-content h2 {
+      margin-top: 0;
+      color: var(--accent);
+    }
+
+    .modal-content p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Empresas Vivas, Planeta Vivo: Una Revolución desde la Administración</h1>
+  <div class="gallery" id="gallery"></div>
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2 id="modal-title"></h2>
+      <p id="modal-description"></p>
+    </div>
+  </div>
+
+  <script>
+    const modal = document.getElementById("modal");
+    const title = document.getElementById("modal-title");
+    const description = document.getElementById("modal-description");
+    const gallery = document.getElementById("gallery");
+
+    const info = [
+      {
+        title: "La Sociedad del Cansancio",
+        description: "Describe cómo la presión de la autoexigencia y la productividad extrema genera agotamiento físico y mental en las personas."
+      },
+      {
+        title: "Pensamiento Crítico",
+        description: "Es la capacidad de analizar y evaluar información de forma reflexiva, cuestionando lo establecido para encontrar nuevas soluciones."
+      },
+      {
+        title: "Eco-Inteligencia Organizacional",
+        description: "Capacidad de las empresas para integrar criterios ambientales en sus decisiones, promoviendo la sostenibilidad y la responsabilidad."
+      },
+      {
+        title: "Organización como Sistema Vivo",
+        description: "Visualiza a la empresa como un ente dinámico, capaz de adaptarse, aprender y evolucionar en su entorno."
+      },
+      {
+        title: "Transformaciones Emergentes",
+        description: "Cambios espontáneos e innovadores que surgen ante nuevos desafíos sociales, económicos o ambientales."
+      },
+      {
+        title: "Pluralidad Epistémica",
+        description: "Reconocimiento de múltiples formas de conocimiento y la integración de diversas perspectivas."
+      },
+      {
+        title: "Redes Complejas",
+        description: "Interconexiones entre individuos, organizaciones y sistemas que influyen mutuamente."
+      },
+      {
+        title: "Autonomía y Vitalidad",
+        description: "Empoderamiento de los individuos para actuar con energía, propósito y responsabilidad."
+      },
+      {
+        title: "Cultura y Naturaleza",
+        description: "Relación entre los valores culturales humanos y la sostenibilidad ecológica."
+      },
+      {
+        title: "Orden Caórdico",
+        description: "Mezcla de caos y orden que permite creatividad, innovación y adaptabilidad en las organizaciones."
+      },
+      {
+        title: "Organización Sensible",
+        description: "Una entidad capaz de sentir, responder y adaptarse a su entorno humano y ambiental."
+      },
+      {
+        title: "Deconstrucción de Paradigmas",
+        description: "Reevaluación crítica de creencias tradicionales para abrir nuevas posibilidades de gestión."
+      },
+      {
+        title: "Ética Profesional",
+        description: "Responsabilidad moral en la toma de decisiones en contextos empresariales."
+      },
+      {
+        title: "Educación Mediadora",
+        description: "Proceso formativo que conecta al individuo con el entorno a través del conocimiento práctico y reflexivo."
+      },
+      {
+        title: "Administración en Crisis",
+        description: "Gestión de situaciones de emergencia e incertidumbre mediante liderazgo y toma de decisiones acertada."
+      },
+      {
+        title: "Ruptura del Conocimiento Lineal",
+        description: "Adopción de estructuras no lineales y complejas en el aprendizaje y gestión."
+      },
+      {
+        title: "Revoluciones Científicas",
+        description: "Innovaciones disruptivas que reconfiguran el entendimiento y las prácticas organizacionales."
+      },
+      {
+        title: "Visión Sistémica del Futuro",
+        description: "Proyección integral y estratégica de los escenarios futuros considerando múltiples factores."
+      },
+      {
+        title: "Conexión con el Entorno",
+        description: "Interacción permanente y consciente con el contexto externo."
+      },
+      {
+        title: "Administración Humana",
+        description: "Gestión centrada en el bienestar, desarrollo y dignidad de las personas."
+      }
+    ];
+
+    info.forEach((item, index) => {
+      const container = document.createElement('div');
+      container.className = 'image-container';
+      container.onclick = () => openModal(index);
+
+      const img = document.createElement('img');
+      img.src = index === 9 ? `img10.PNG` : `img${index + 1}.jpg`;
+      img.alt = item.title;
+
+      const caption = document.createElement('h3');
+      caption.textContent = item.title;
+
+      container.appendChild(img);
+      container.appendChild(caption);
+      gallery.appendChild(container);
+    });
+
+    function openModal(index) {
+      title.textContent = info[index].title;
+      description.textContent = info[index].description;
+      modal.style.display = "block";
+    }
+
+    function closeModal() {
+      modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        closeModal();
+      }
+    }
+  </script>
+</body>
+</html>
